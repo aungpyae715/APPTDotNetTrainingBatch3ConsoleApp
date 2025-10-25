@@ -18,7 +18,7 @@ string query = @"SELECT [ProductID]
       ,[ProductName]
       ,[Price]
       ,[DeleteFlag]
-  FROM [dbo].[Tbl_Product]";   
+  FROM [dbo].[Tbl_Product]";
 
 SqlCommand command = new SqlCommand(query, connection);
 SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -32,9 +32,9 @@ for (int i = 0; i < dt.Rows.Count; i++)
     DataRow row = dt.Rows[i];
     //Console.WriteLine(row["ProductId"]);
     int rowNo = i + 1;
-    decimal price = Convert.ToDecimal (row["Price"]);
+    decimal price = Convert.ToDecimal(row["Price"]);
     Console.WriteLine(rowNo.ToString() + ". " + row["ProductName"] + "(" + price.ToString("n0") + ")");
-   // Console.WriteLine("Price =>" + row["Price"]);
+    // Console.WriteLine("Price =>" + row["Price"]);
     //Console.WriteLine("--------------------");
 }
 Console.ReadLine();
